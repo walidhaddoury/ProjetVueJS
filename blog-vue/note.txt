@@ -1,0 +1,11 @@
+articles[
+    [
+        Titre:
+        Content:
+        Date:
+        Auteur:    
+    
+    ]
+
+
+]

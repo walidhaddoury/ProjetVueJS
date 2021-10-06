@@ -1,12 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  
+  <div style="width: 100%;">
+    <ListArticle/>
   </div>
 </template>
+
+
+
+<script>
+import ListArticle from './components/ListArticles.vue'
+export default {
+  name: 'List',
+  components: {
+    ListArticle
+  }
+}
+
+</script>
+
+
+
 
 <style>
 #app {
