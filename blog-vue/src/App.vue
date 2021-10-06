@@ -6,6 +6,7 @@
       </div>
       <div class="text-center md:w-3/4 text-3xl md:text-right">
         <router-link to="/">Home</router-link> |
+        <router-link to="/article">Article</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/admin">Admin</router-link>
       </div>
