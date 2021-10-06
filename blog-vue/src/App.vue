@@ -1,6 +1,8 @@
 <template>
-  <div id="app" class="font">
-    <div class="bg flex flex-col py-10 md:flex-row md:justify-between md:p-10">
+  <div id="app" class="font w-screen h-screen">
+    <div
+      class="bg w-full h-1/6 flex flex-col py-10 md:flex-row md:justify-between md:p-10"
+    >
       <div class="md:w-1/4 text-3xl text-center">
         <h1 class="font">BLOG VueJS</h1>
       </div>
