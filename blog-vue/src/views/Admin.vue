@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="admin">
+  <div id="app" class="admin w-full h-5/6">
     <div id="nav">
       <router-link to="/admin/add">Ajouter</router-link> |
       <router-link to="/admin/edit">Modifier</router-link> |

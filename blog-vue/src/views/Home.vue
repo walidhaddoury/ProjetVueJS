@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full p-10">
+  <div class="w-full h-5/6 p-10">
     <div class="text-5xl mb-20">
       <h1>Nos Articles du moment</h1>
     </div>

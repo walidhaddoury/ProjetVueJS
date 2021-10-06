@@ -1,5 +1,5 @@
 <template>
-  <div class="p-20 article">
+  <div class="p-20 article w-full h-5/6">
     <div class="text-center mb-20">
       <h1 class="text-5xl">{{ articles.Titre }}</h1>
       <h3 class="text-xl">{{ articles.Auteur }} | {{ articles.Date }}</h3>

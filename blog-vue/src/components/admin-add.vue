@@ -1,10 +1,6 @@
 <template>
   <div class="h-full w-full p-4 flex flex-col justify-center items-center">
-    <form
-      ref="formArticle"
-      class="w-full max-w-4xl"
-      @submit.prevent="addArticle"
-    >
+    <form ref="formArticle" class="w-full max-w-4xl" @submit.prevent="">
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
           <label
@@ -61,50 +57,51 @@
         <button
           class="w-1/3 md:w-1/5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="button"
+          @click="resetInput"
         >
           Annuler
         </button>
         <button
           class="w-1/3 md:w-1/5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
+          @click="addArticle()"
         >
           Valider
         </button>
       </div>
     </form>
-    <div>
-      <h1>{{ listArticle }}</h1>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "admin-add",
-  data: function() {
+  data() {
     return {
       titre: "",
-      auteur: "",
       date: "",
+      auteur: "",
       content: "",
-      listArticle: [],
     };
   },
   methods: {
-    addArticle: function() {
+    addArticle() {
       if (
         this.titre != "" &&
         this.auteur != "" &&
         this.date != "" &&
         this.content != ""
       ) {
-        this.listArticle.push({
-          titre: this.titre,
-          auteur: this.auteur,
-          date: this.date,
-          content: this.content,
+        this.$store.dispatch("addArticle", {
+          Titre: this.titre,
+          Auteur: this.auteur,
+          Date: this.date,
+          Content: this.content,
         });
+        this.resetInput();
       }
+    },
+    resetInput() {
       this.titre = this.auteur = this.date = this.content = "";
     },
   },

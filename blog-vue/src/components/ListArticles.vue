@@ -2,7 +2,7 @@
   <div class="container px-5 mx-auto">
     <div class="flex flex-wrap -m-4">
       <div
-        v-for="(item, index) in articlesCut"
+        v-for="(article, index) in listArticle"
         :key="index"
         class="p-4 lg:w-1/3"
       >
@@ -15,12 +15,12 @@
             ARTICLE
           </h2>
           <h1
-            class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3"
+            class="title-font sm:text-xl text-lg font-medium text-gray-900 mb-3"
           >
-            {{ item.Titre }}
+            {{ article.Titre }}
           </h1>
-          <p class="leading-relaxed mb-3">
-            {{ troncText(item.Content) }}
+          <p class="leading-relaxed mb-3 text-xs">
+            {{ article.Content }}
           </p>
           <a class="text-indigo-500 inline-flex items-center"
             >Lire l'article
@@ -41,10 +41,10 @@
             class="text-center mt-2 leading-none flex flex-col justify-center absolute bottom-0 left-0 w-full py-4"
           >
             <p class="leading-relaxed">
-              {{ item.Date }}
+              {{ article.Date }}
             </p>
             <p class="leading-relaxed mb-3">
-              {{ item.Auteur }}
+              {{ article.Auteur }}
             </p>
           </div>
         </div>
@@ -55,132 +55,10 @@
 
 <script>
 export default {
-  props: {},
-  data() {
-    return {
-      articles: [
-        {
-          Titre: "Overwatchs est-il un bon jeux?",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-        {
-          Titre: "Paladins est meilleurs que Overwatch !",
-          Content:
-            "Paladins : Champions du Royaume (Paladins: Champions of the Realm) est un jeu vidéo de tir à la première personne en équipe développé par Hi-Rez Studios. Le jeu est officiellement entré en bêta ouverte le 16 septembre 2016. Lors de sa sortie en bêta ouverte sur Steam, le jeu a attiré 800 000 téléchargements en une semaine et a été l'un des top 10 des jeux les plus populaires par utilisateurs simultanés sur Steam. La version bêta fermée a commencé le 17 novembre 2015. Le jeu continue à créer de nouveaux personnages",
-          Date: "13/07/2003",
-          Auteur: "Marcel Prout",
-        },
-        {
-          Titre: "1",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-        {
-          Titre: "2",
-          Content:
-            "Paladins : Champions du Royaume (Paladins: Champions of the Realm) est un jeu vidéo de tir à la première personne en équipe développé par Hi-Rez Studios. Le jeu est officiellement entré en bêta ouverte le 16 septembre 2016. Lors de sa sortie en bêta ouverte sur Steam, le jeu a attiré 800 000 téléchargements en une semaine et a été l'un des top 10 des jeux les plus populaires par utilisateurs simultanés sur Steam. La version bêta fermée a commencé le 17 novembre 2015. Le jeu continue à créer de nouveaux personnages",
-          Date: "13/07/2003",
-          Auteur: "Marcel Prout",
-        },
-        {
-          Titre: "3",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-        {
-          Titre: "4",
-          Content:
-            "Paladins : Champions du Royaume (Paladins: Champions of the Realm) est un jeu vidéo de tir à la première personne en équipe développé par Hi-Rez Studios. Le jeu est officiellement entré en bêta ouverte le 16 septembre 2016. Lors de sa sortie en bêta ouverte sur Steam, le jeu a attiré 800 000 téléchargements en une semaine et a été l'un des top 10 des jeux les plus populaires par utilisateurs simultanés sur Steam. La version bêta fermée a commencé le 17 novembre 2015. Le jeu continue à créer de nouveaux personnages",
-          Date: "13/07/2003",
-          Auteur: "Marcel Prout",
-        },
-        {
-          Titre: "5",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-        {
-          Titre: "6",
-          Content:
-            "Paladins : Champions du Royaume (Paladins: Champions of the Realm) est un jeu vidéo de tir à la première personne en équipe développé par Hi-Rez Studios. Le jeu est officiellement entré en bêta ouverte le 16 septembre 2016. Lors de sa sortie en bêta ouverte sur Steam, le jeu a attiré 800 000 téléchargements en une semaine et a été l'un des top 10 des jeux les plus populaires par utilisateurs simultanés sur Steam. La version bêta fermée a commencé le 17 novembre 2015. Le jeu continue à créer de nouveaux personnages",
-          Date: "13/07/2003",
-          Auteur: "Marcel Prout",
-        },
-        {
-          Titre: "7",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-        {
-          Titre: "8",
-          Content:
-            "Paladins : Champions du Royaume (Paladins: Champions of the Realm) est un jeu vidéo de tir à la première personne en équipe développé par Hi-Rez Studios. Le jeu est officiellement entré en bêta ouverte le 16 septembre 2016. Lors de sa sortie en bêta ouverte sur Steam, le jeu a attiré 800 000 téléchargements en une semaine et a été l'un des top 10 des jeux les plus populaires par utilisateurs simultanés sur Steam. La version bêta fermée a commencé le 17 novembre 2015. Le jeu continue à créer de nouveaux personnages",
-          Date: "13/07/2003",
-          Auteur: "Marcel Prout",
-        },
-        {
-          Titre: "9",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-        {
-          Titre: "10",
-          Content:
-            "Paladins : Champions du Royaume (Paladins: Champions of the Realm) est un jeu vidéo de tir à la première personne en équipe développé par Hi-Rez Studios. Le jeu est officiellement entré en bêta ouverte le 16 septembre 2016. Lors de sa sortie en bêta ouverte sur Steam, le jeu a attiré 800 000 téléchargements en une semaine et a été l'un des top 10 des jeux les plus populaires par utilisateurs simultanés sur Steam. La version bêta fermée a commencé le 17 novembre 2015. Le jeu continue à créer de nouveaux personnages",
-          Date: "13/07/2003",
-          Auteur: "Marcel Prout",
-        },
-        {
-          Titre: "11",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-        {
-          Titre: "12",
-          Content:
-            "Paladins : Champions du Royaume (Paladins: Champions of the Realm) est un jeu vidéo de tir à la première personne en équipe développé par Hi-Rez Studios. Le jeu est officiellement entré en bêta ouverte le 16 septembre 2016. Lors de sa sortie en bêta ouverte sur Steam, le jeu a attiré 800 000 téléchargements en une semaine et a été l'un des top 10 des jeux les plus populaires par utilisateurs simultanés sur Steam. La version bêta fermée a commencé le 17 novembre 2015. Le jeu continue à créer de nouveaux personnages",
-          Date: "13/07/2003",
-          Auteur: "Marcel Prout",
-        },
-        {
-          Titre: "13",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-        {
-          Titre: "14",
-          Content:
-            "Paladins : Champions du Royaume (Paladins: Champions of the Realm) est un jeu vidéo de tir à la première personne en équipe développé par Hi-Rez Studios. Le jeu est officiellement entré en bêta ouverte le 16 septembre 2016. Lors de sa sortie en bêta ouverte sur Steam, le jeu a attiré 800 000 téléchargements en une semaine et a été l'un des top 10 des jeux les plus populaires par utilisateurs simultanés sur Steam. La version bêta fermée a commencé le 17 novembre 2015. Le jeu continue à créer de nouveaux personnages",
-          Date: "13/07/2003",
-          Auteur: "Marcel Prout",
-        },
-        {
-          Titre: "15",
-          Content:
-            "Overwatch est un jeu vidéo de tir (FPS) en ligne et en équipe de 6, développé et publié par Blizzard Entertainment. Le jeu est annoncé le 7 novembre 2014 à la BlizzCon, et est commercialisé le 24 mai 2016 sur Windows, PlayStation 4 et Xbox One et le 15 octobre 2019 sur Nintendo Switch. Le jeu met l'accent sur la coopération entre différentes classes représentées par différents personnages ayant chacun leurs capacités et particularités. Le jeu s'inspire notamment des jeux de tir en vue subjective en équipe de la décennie précédente mettant eux aussi l'accent sur la coopération entre plusieurs classes de personnage, notamment Team Fortress 2. Le 1er novembre 2019, Blizzard annonce la production de Overwatch 21, lors de cette BlizzCon. Le développement de ce second opus reste à suivre.",
-          Date: "13/07/2002",
-          Auteur: "Marcel Proust",
-        },
-      ],
-      page: 10,
-    };
+  computed: {
+    listArticle() {
+      return this.$store.state.listArticle;
+    },
   },
   methods: {
     troncText(text) {
@@ -206,11 +84,6 @@ export default {
       }
 
       return article;
-    },
-  },
-  computed: {
-    articlesCut() {
-      return this.CutArticles(this.page);
     },
   },
 };
