@@ -1,32 +1,53 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="font">
+    <div
+      class="bg flex flex-col justify-evenly py-10 md:flex-row md:justify-between md:p-10"
+    >
+      <div class="md:w-1/4 text-3xl text-center">
+        <h1 class="font">BLOG VueJS</h1>
+      </div>
+      <div class="text-center md:w-3/4 text-3xl md:text-right">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link> |
+        <router-link to="/admin">Admin</router-link>
+      </div>
     </div>
-    <router-view/>
+    <hr />
+    <router-view />
   </div>
 </template>
 
-<style>
-#app {
+<style scoped>
+.font {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+#app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  justify-content: center;
+}
+
+.bg {
+  background-color: black;
+  color: whitesmoke;
 }
 
 #nav {
   padding: 30px;
 }
 
-#nav a {
+a {
   font-weight: bold;
-  color: #2c3e50;
+  font-size: 30px;
 }
 
-#nav a.router-link-exact-active {
+a.router-link-exact-active {
   color: #42b983;
+}
+hr {
+  size: 2px;
+  background-color: black;
 }
 </style>
