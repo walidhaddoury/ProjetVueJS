@@ -19,7 +19,7 @@
           >
             {{ article.Titre }}
           </h1>
-          <p class="leading-relaxed mb-3 text-xs">
+          <p v-html="markHtml" class="leading-relaxed mb-3 text-xs">
             {{ article.Content }}
           </p>
 
@@ -82,57 +82,33 @@ export default {
   },
 
   computed: {
-<<<<<<< HEAD
     VerifDown() {
-      console.log(this.page);
       if (this.page == 0) {
         return true;
       } else {
         return false;
       }
     },
-=======
-    VerifDown(){
-
-      if(this.page == 0){
-        return true
-      }else{
-        return false
+    VerifUp() {
+      if (this.page + 10 > this.listArticle.length) {
+        return true;
+      } else {
+        return false;
       }
     },
-    VerifUp(){
-
-      if(this.page+10 > this.listArticle.length){
-        return true
-      }else{
-        return false
-      }
-    },
->>>>>>> 4e73ecca4d02b952efb409d26987d4d17e3a7f3b
 
     listArticle() {
       return this.$store.state.listArticle;
     },
   },
   methods: {
-<<<<<<< HEAD
     pageUp() {
-      this.page = this.page + 1;
+      this.page = this.page + 10;
       return 1;
     },
     pageDown() {
-      this.page = this.page - 1;
+      this.page = this.page - 10;
       return 1;
-=======
-
-    pageUp(){
-      this.page = this.page + 10
-      return 1
-    },
-    pageDown(){
-      this.page = this.page - 10
-      return 1
->>>>>>> 4e73ecca4d02b952efb409d26987d4d17e3a7f3b
     },
     rooter(index) {
       console.log("ici");

@@ -46,11 +46,12 @@
           >
             Content
           </label>
-          <input
+          <textarea
             class="text-justify h-40 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             type="text"
             v-model="content"
-          />
+          >
+          </textarea>
         </div>
       </div>
       <div class="flex items-center justify-evenly">
