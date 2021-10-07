@@ -105,11 +105,11 @@ export default {
   },
   methods: {
     pageUp() {
-      this.page = this.page + 1;
+      this.page = this.page + 10;
       return 1;
     },
     pageDown() {
-      this.page = this.page - 1;
+      this.page = this.page - 10;
       return 1;
     },
     rooter(index){
