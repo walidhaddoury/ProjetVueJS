@@ -11,7 +11,7 @@
             <img
               alt="testimonial"
               class="w-40 h-40 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-              src="https://dummyimage.com/302x302"
+              src="../assets/walid.png"
             />
             <span
               class="inline-block h-1 w-10 rounded bg-yellow-500 mt-6 mb-4"
@@ -31,7 +31,7 @@
             <img
               alt="testimonial"
               class="w-40 h-40 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-              src="https://dummyimage.com/302x302"
+              src="../assets/20210527_130428.jpg"
             />
             <span
               class="inline-block h-1 w-10 rounded bg-yellow-500 mt-6 mb-4"
@@ -51,7 +51,7 @@
             <img
               alt="testimonial"
               class="w-40 h-40 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-              src="https://dummyimage.com/300x300"
+              src="../assets/photoalexandre.jpeg"
             />
             <span
               class="inline-block h-1 w-10 rounded bg-yellow-500 mt-6 mb-4"
@@ -71,7 +71,7 @@
             <img
               alt="testimonial"
               class="w-40 h-40 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-              src="https://dummyimage.com/305x305"
+              src="../assets/kilian.png"
             />
             <span
               class="inline-block h-1 w-10 rounded bg-yellow-500 mt-6 mb-4"
