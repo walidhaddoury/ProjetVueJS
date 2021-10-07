@@ -79,7 +79,7 @@
             <h2
               class="text-gray-900 font-medium title-font tracking-wider text-sm"
             >
-              Kilian
+              Kilian COUDRAY
             </h2>
             <p class="text-gray-500">Developpeur Full-Stack</p>
           </div>

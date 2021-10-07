@@ -22,8 +22,10 @@
           <p class="leading-relaxed mb-3 text-xs">
             {{ article.Content }}
           </p>
-          <a class="text-indigo-500 inline-flex items-center"
-            >Lire l'article
+          <button
+            class="text-indigo-500 inline-flex items-center hover:text-red-500"
+          >
+            Lire l'article
             <svg
               class="w-4 h-4 ml-2"
               viewBox="0 0 24 24"
@@ -36,7 +38,7 @@
               <path d="M5 12h14"></path>
               <path d="M12 5l7 7-7 7"></path>
             </svg>
-          </a>
+          </button>
           <div
             class="text-center mt-2 leading-none flex flex-col justify-center absolute bottom-0 left-0 w-full py-4"
           >
