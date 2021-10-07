@@ -134,6 +134,10 @@ export default new Vuex.Store({
     addArticle(state, article) {
       state.listArticle.push(article);
     },
+    updateArticle(state, article) {
+      const id = parseInt(article[1]);
+      Vue.set(state.listArticle, id, article[0]);
+    },
   },
   actions: {
     removeArticleById(context, id) {
@@ -142,6 +146,9 @@ export default new Vuex.Store({
     },
     addArticle(context, articleToAdd) {
       context.commit("addArticle", articleToAdd);
+    },
+    updateArticle(context, article) {
+      context.commit("updateArticle", article);
     },
   },
   modules: {},
