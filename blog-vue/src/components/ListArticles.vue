@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <p><button v-on:click="pageDown" v-bind:class="{ stop: VerifDown }">Page Précedente</button>-<button v-on:click="pageUp" v-bind:class="{ stop: isUp }">Page Suivante</button></p>
+    <p><button v-on:click="pageDown" v-bind:class="{ stop: VerifDown }">Page Précedente</button>-<button v-on:click="pageUp" v-bind:class="{ stop: VerifUp }">Page Suivante</button></p>
   </div>
 </template>
 
@@ -77,14 +77,21 @@ export default {
   
   computed: {
     VerifDown(){
-      console.log(this.page)
+      
       if(this.page == 0){
         return true
       }else{
         return false
       }
     },
-
+    VerifUp(){
+      
+      if(this.page+10 > this.listArticle.length){
+        return true
+      }else{
+        return false
+      }
+    },
 
     listArticle() {
       return this.$store.state.listArticle;
@@ -94,11 +101,11 @@ export default {
   methods: {
     
     pageUp(){
-      this.page = this.page + 1
+      this.page = this.page + 10
       return 1
     },
     pageDown(){
-      this.page = this.page - 1
+      this.page = this.page - 10
       return 1
     },
     rooter(index){
