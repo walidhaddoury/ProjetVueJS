@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full p-4 flex flex-col justify-center items-center">
+  <div class="w-full p-4 flex flex-col justify-center items-center">
     <form ref="formArticle" class="w-full max-w-4xl" @submit.prevent="">
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">

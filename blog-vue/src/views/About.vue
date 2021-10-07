@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-5/6 flex flex-col justify-center items-center overflow-hidden"
+    class="w-full h-5/6 flex flex-col md:justify-center md:items-center md:overflow-hidden mt-10"
   >
     <div class="container px-5 mx-auto">
       <div class="flex flex-wrap justify-evenly -m-4">
