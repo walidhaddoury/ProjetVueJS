@@ -112,7 +112,10 @@ export default {
     },
     rooter(index) {
       console.log("ici");
-      return this.$router.push({ name: "Article", params: { id: index } });
+      return this.$router.push({
+        name: "Article",
+        params: { id: index + this.page },
+      });
     },
     troncText(text) {
       text = text.substring(0, 100);
